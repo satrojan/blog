@@ -2,15 +2,17 @@
 layout: default
 ---
 
-<div class="box">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <span class="post-meta">{{ page.date | date: "%-d %B, %Y. It was a %A." }} <a style="color:grey" href="{{ BASE_PATH }}{{ post.url }}#disqus_thread"></a></span><hr/>
+{% include page-intro.html %}
 
-    <span class="post-text">{{ content }}</span>
-</div>
-
-<!--<div class="box">-->
-    <!-- google ads code box -->
-<!--</div>-->
-
-{% include JB/comments %}
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        {{ content }}
+      </div>
+      {% if site.disqus.shortname %}
+        {% include disqus_comments.html %}
+      {% endif %}
+    </article>
+  </div>
+</main>
