@@ -29,6 +29,9 @@ baseurl: "/blog"
 production_url : http://satrojan.github.io/blog
 BASE_PATH : http://satrojan.github.io/blog
 
+plugins:
+  - jekyll-feed
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
