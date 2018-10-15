@@ -6,7 +6,7 @@ Neural networks are currently the frontier for data science. Exploring and under
 
 In my attempt to learn more about Neural Networks I came across the following [article](http://neuralnetworksanddeeplearning.com/chap4.html) By Michael Nielsen that did a very good job of describing the basics of neural networks in a mathematical way. I decided to take a more programmatical approach and attempt to code the solution in python.
 
-To begin we are going to be modeling a single input neural network with five hidden nodes following the function $f(x)=0.2+0.4x^2+0.3x\sin(15x)+0.05\cos(50x)$ That looks scary but it's not that bad. Let's run it in code and see what it looks like.
+To begin we are going to be modeling a single input neural network with five hidden nodes following the function $$f(x)=0.2+0.4x^2+0.3x\sin(15x)+0.05\cos(50x)$$ That looks scary but it's not that bad. Let's run it in code and see what it looks like.
 
 
 ```python
