@@ -59,7 +59,7 @@ for i in x:
 
 ```python
 sns.set(style="darkgrid")
-sns.lineplot(x=x, y = y_m); # neural network before applying inveres sigmoid.
+sns.lineplot(x=x, y = y_m); # neural network before applying inverse sigmoid.
 ```
 
 
