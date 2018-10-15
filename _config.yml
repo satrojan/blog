@@ -29,6 +29,7 @@ baseurl: "/blog"
 production_url : http://satrojan.github.io/blog
 BASE_PATH : http://satrojan.github.io/blog
 theme: jekyll-theme-basically-basic
+markdown: kramdown
 
 
 plugins:
