@@ -2,9 +2,9 @@
 layout: post
 title: Conceptual Neural Network
 ---
-Neural networks are currently the frontier for data science. Exploring and understanding neural nets are going to be critical for the future. Even today Neural Networks power devices in our homer such as Amazon's Alexa. These uses will continue to expand and propagate through our lives and future.
+Neural networks are currently the frontier for data science. Exploring and understanding neural nets are going to be critical for the future. Even today neural networks power devices in our homer such as Amazon's Alexa. These uses will continue to expand and propagate through our lives and future.
 
-In my attempt to learn more about Neural Networks I came across the following [article](http://neuralnetworksanddeeplearning.com/chap4.html) By Michael Nielsen that did a very good job of describing the basics of neural networks in a mathematical way. I decided to take a more programmatical approach and attempt to code the solution in python.
+In my attempt to learn more about neural networks I came across the following [article](http://neuralnetworksanddeeplearning.com/chap4.html) by Michael Nielsen that did a very good job of describing the basics of neural networks in a mathematical way. I decided to take a more programmatical approach and attempt to code the solution in python.
 
 To begin we are going to be modeling a single input neural network with five hidden nodes following the function
 
@@ -98,4 +98,4 @@ Our output is far from perfect but with only five nodes we cannot be asking for 
 
 
 
-We can see that our MSE is very low showing our emulated neural network is a good fit for our initial equation. We can greatly improve our results in the emulated neural network simply by adding more nodes. An actual neural network can increase our results by adding a second hidden layer and attempting to manipulate other hyperparameters but that is something that we cannot emulate using simple if statements.
+We can see that our MSE is very low, showing our emulated neural network is a good fit for our initial equation. We can greatly improve our results in the emulated neural network simply by adding more nodes. An actual neural network can increase our results by adding a second hidden layer and attempting to manipulate other hyperparameters, but that is something that we cannot emulate using simple if statements.

@@ -89,11 +89,11 @@ df_train.drop('Cabin', axis=1, inplace=True)
 
 The Age column is the most interesting. The dataset have about 80% of the data intact. This is enough to attempt to make valid guesses with the data to attempt to impute the missing values.
 
-I think that now would be a good time to segue into the different types of missing data. First, there is NMAR data that is not missing at random. This is not something that can be corrected with imputation and can only be dealt with in the data collection phase. We are going to assume that our data is not NMAR.
+I think that now would be a good time to segue into the different types of missing data. First, there is NMAR, not missing at random data. This is not something that can be corrected with imputation and can only be dealt with in the data collection phase. We are going to assume that our data is not NMAR.
 
 The next two types of missing data are MAR, Missing at Random, and MCAR, Missing completely at random. These two sound similar but there are significant differences. With MCAR the missing data is not correlated with any of the observed data. This means that we can safely drop these values without it affecting the model much. MAR has missing data that is correlated with observed data. With this knowledge we can use different models, such as those found in fancyimpute to attempt to impute the data.
 
-From the matrix graph in missingno we see that the missing data in the Age column appears to be randomly distributed throughout the column. There are a few test to see if a dataset has MCAR or MAR but I have not found a good package to preform these test automatically.
+From the matrix graph in missingno we see that the missing data in the Age column appears to be randomly distributed throughout the column. There are a few test to see if a dataset has MCAR or MAR but I have not found a good package to perform these test automatically.
 
 
 ```python
@@ -147,7 +147,7 @@ ax =sns.countplot(x = 'Embarked', hue = 'known_age',data = df_graph, orient='v')
 
 Based on the above graphs the missing data does not appear to be completely random. In fact it appears to be strongly correlated with the values in Pclass, specifically with third class passengers. Given that the highest mortality rate was also in this group there is almost certainly a correlation that survival also factored into our knowledge of age.
 
-I am going to create a model with Random Forest and dropping the age column. This will give us a baseline to work from. All models will have random state set to 42 to ensure that all models preform evenly.
+I am going to create a model with Random Forest and dropping the age column. This will give us a baseline to work from. All models will have random state set to 42 to ensure that all models perform evenly.
 
 
 ```python
@@ -219,7 +219,7 @@ sns.heatmap(data,annot = True, fmt='g', cbar=False)
 
 This is our base with Mean Accuracy Score of .78, 25 false positives and 24 false negatives.
 
-The next step is to do a very simple form of impudence and applying the mean value to missing data.
+The next step is to do a very simple form of imputation and applying the mean value to missing data.
 
 
 ```python
@@ -275,7 +275,7 @@ model.score(X_test,y_test)
 
 
 
-From model we see that our score has improved. Looking at the confusion matrix we see that our true negatives decreased while our true positives increased. Over all the result is about even.
+From the model we see that our score has improved. Looking at the confusion matrix we see that our true negatives decreased while our true positives increased. Over all the result is about even.
 
 
 ```python
@@ -301,7 +301,7 @@ df_model = make_model_df(['Name','Ticket','known_age'])
 df_model.Age.where(df_model.Age>0,np.NaN,inplace=True)
 ```
 
-The last thing we are going to do is to use the IterativeImputer. This is a package from MICE that fancyimpute brought over to python. Like the other methods this is implemented using scikit-learn fit_transform. I ran this and combined the results at the end. to get my results
+The last thing we are going to do is to use the IterativeImputer. This is a package from MICE that fancyimpute brought over to python. Like the other methods this is implemented using scikit-learn fit_transform. I ran this and combined the results at the end to get my results.
 
 
 ```python
