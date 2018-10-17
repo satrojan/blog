@@ -66,7 +66,7 @@ sns.lineplot(x=x, y = y_m); # neural network before applying inverse sigmoid.
 ![png](/blog/docs/assets/images/p_nnc/output_5_0.png)
 
 
-This is the initial trained neural network output. Once we get this output we will apply the reverse sigmoid function to get our true output.
+This is the initial trained neural network output. Once we get this output we will apply the inverse sigmoid function to get our true output.
 
 
 ```python
